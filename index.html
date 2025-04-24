@@ -1,18 +1,19 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
+<h2 class="text-center mb-4">Artists</h2>
+<div class="row">
+  {% for artist in site.artists %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ artist.title }}</h5>
+          <p class="card-text">Albums: {{ artist.albums | size }}</p>
+          <a href="{{ artist.url }}" class="btn btn-primary">View Artist</a>
+        </div>
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+    </div>
   {% endfor %}
 </div>
