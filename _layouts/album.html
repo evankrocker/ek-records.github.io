@@ -15,8 +15,8 @@ layout: default
   <div class="col-md-6">
     <h4>Side A</h4>
     <ul>
-      {% for track in site.tracks %}
-        {% if track.album == page.title and track.side == "A" %}
+      {% for track in page.tracks %}
+        {% if track.side == "A" %}
           <li>{{ track.title }}</li>
         {% endif %}
       {% endfor %}
@@ -25,8 +25,8 @@ layout: default
   <div class="col-md-6">
     <h4>Side B</h4>
     <ul>
-      {% for track in site.tracks %}
-        {% if track.album == page.title and track.side == "B" %}
+      {% for track in page.tracks %}
+        {% if track.side == "B" %}
           <li>{{ track.title }}</li>
         {% endif %}
       {% endfor %}
