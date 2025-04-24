@@ -1,7 +1,7 @@
 title: Vinyl Record Collection
 description: A website to showcase a vinyl record collection
 baseurl: "records" # Update if deploying to a subpath
-url: "https://evankrocker.github.io" # Update to your GitHub Pages URL
+url: "https://evankrocker.github.io/records/" # Update to your GitHub Pages URL
 
 # Enable Jekyll Collections
 collections:
