@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<h2 class="text-center mb-4">{{ page.title }}</h2>
+<div class="text-center mb-4">
+  <img src="{{ page.artwork }}" alt="{{ page.title }} artwork" class="img-fluid mb-4">
+  <p><strong>Artist:</strong> {{ page.artist }}</p>
+  <p><strong>Genre:</strong> {{ page.genre }}</p>
+  <p><strong>Year Released:</strong> {{ page.year }}</p>
+</div>
+
+<h3>Tracks</h3>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Side A</h4>
+    <ul>
+      {% for track in site.tracks %}
+        {% if track.album == page.title and track.side == "A" %}
+          <li>{{ track.title }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h4>Side B</h4>
+    <ul>
+      {% for track in site.tracks %}
+        {% if track.album == page.title and track.side == "B" %}
+          <li>{{ track.title }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
