@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<h2 class="text-center mb-4">{{ page.title }}</h2>
+<div class="row">
+  {% for album in site.albums %}
+    {% if album.artist == page.title %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img class="card-img-top" src="{{ album.artwork }}" alt="{{ album.title }} artwork">
+          <div class="card-body">
+            <h5 class="card-title">{{ album.title }}</h5>
+            <p class="card-text">Genre: {{ album.genre }}</p>
+            <p class="card-text">Year: {{ album.year }}</p>
+            <a href="{{ album.url }}" class="btn btn-primary">View Album</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
